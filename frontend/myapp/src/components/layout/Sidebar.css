@@ -1,0 +1,147 @@
+.l-sidebar {
+  width: 214px;
+  flex-shrink: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 1px solid var(--border-subtle);
+  background: var(--bg-subtle);
+  transition:
+    width 0.22s var(--ease-out),
+    opacity 0.18s var(--ease-out),
+    border-right-width 0.22s var(--ease-out);
+}
+
+[data-theme="light"] .l-sidebar {
+  background: var(--off-white);
+}
+
+.l-sidebar[data-collapsed="true"] {
+  width: 0;
+  opacity: 0;
+  border-right-width: 0;
+}
+
+.l-sidebar__inner {
+  width: 214px;
+  height: 100%;
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.l-sidebar__group {
+  margin-bottom: 2px;
+}
+
+.l-sidebar__group ul {
+  list-style: none;
+}
+
+.l-sidebar__group-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  padding: 14px 10px 6px;
+}
+
+.l-sidebar__group-label--first {
+  padding-top: 4px;
+}
+
+.l-sidebar__item {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  width: 100%;
+  padding: 9px 12px;
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  font-size: 13.5px;
+  font-weight: 500;
+  font-family: var(--font-sans);
+  color: var(--text-muted);
+  background: transparent;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: background 150ms var(--ease-out), color 150ms var(--ease-out);
+}
+
+.l-sidebar__item:hover {
+  background: var(--surface-card);
+  color: var(--text-strong);
+}
+
+[data-theme="light"] .l-sidebar__item:hover {
+  background: var(--bg-subtle);
+}
+
+.l-sidebar__item--active {
+  background: var(--accent-wash);
+  color: var(--text-strong);
+  font-weight: 600;
+}
+
+[data-theme="light"] .l-sidebar__item--active {
+  color: var(--accent);
+}
+
+.l-sidebar__item-icon {
+  flex-shrink: 0;
+  color: inherit;
+}
+
+.l-sidebar__item--active .l-sidebar__item-icon {
+  color: var(--accent);
+}
+
+[data-theme="light"] .l-sidebar__item--active .l-sidebar__item-icon {
+  color: inherit;
+}
+
+.l-sidebar__item-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.l-sidebar__user {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border: 1px solid var(--border-subtle);
+  background: var(--surface-card);
+  border-radius: 10px;
+  flex-shrink: 0;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.l-sidebar__user-info {
+  overflow: hidden;
+  min-width: 0;
+  flex: 1;
+}
+
+.l-sidebar__user-name {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-strong);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.l-sidebar__user-sub {
+  font-size: 11px;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 1px;
+}

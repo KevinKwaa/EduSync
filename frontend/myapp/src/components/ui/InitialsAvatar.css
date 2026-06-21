@@ -1,0 +1,33 @@
+.ui-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  user-select: none;
+}
+
+/* Always-dark crimson gradient — sidebar user card (dark theme) */
+.ui-avatar--crimson {
+  background: var(--gradient-crimson);
+  color: #ffffff;
+}
+
+/* Always-dark onyx — sidebar user card (light theme) & at-risk (light theme) */
+.ui-avatar--onyx {
+  background: var(--onyx);
+  color: var(--off-white);
+}
+
+/* Neutral dark surface — at-risk (dark theme), notice board (dark theme) */
+.ui-avatar--neutral {
+  background: var(--neutral-800);
+  color: var(--text-strong);
+}
+
+/* Subtle surface — notice board (light theme) */
+.ui-avatar--subtle {
+  background: var(--bg-subtle);
+  color: var(--text-strong);
+}

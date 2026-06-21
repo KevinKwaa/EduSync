@@ -1,0 +1,10 @@
+.ui-card {
+  background: var(--surface-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+}
+
+[data-theme="light"] .ui-card {
+  box-shadow: var(--shadow-xs);
+}

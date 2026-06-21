@@ -1,0 +1,47 @@
+.d-greeting {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  gap: 16px;
+}
+
+.d-greeting__title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-strong);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.d-greeting__sub {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 3px;
+}
+
+.d-greeting__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-family: var(--font-sans);
+  color: var(--text-muted);
+  border: 1px solid var(--border-default);
+  background: var(--surface-card);
+  padding: 7px 12px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background 150ms var(--ease-out), color 150ms var(--ease-out);
+}
+
+[data-theme="light"] .d-greeting__chip {
+  border-color: var(--border-subtle);
+}
+
+.d-greeting__chip:hover {
+  color: var(--text-strong);
+  background: var(--surface-raised);
+}

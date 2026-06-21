@@ -1,0 +1,37 @@
+.ui-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  border-radius: var(--radius-pill);
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.ui-pill--default {
+  background: var(--surface-raised);
+  color: var(--text-muted);
+  border: 1px solid var(--border-subtle);
+}
+
+.ui-pill--accent {
+  background: var(--accent-wash);
+  color: var(--accent);
+}
+
+.ui-pill--success {
+  background: rgba(46, 125, 91, 0.10);
+  color: var(--success);
+}
+
+.ui-pill--warning {
+  background: rgba(183, 121, 31, 0.12);
+  color: var(--warning);
+}
+
+.ui-pill--danger {
+  background: var(--accent-wash);
+  color: var(--accent);
+}
