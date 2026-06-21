@@ -26,6 +26,7 @@ import { SubjectPerformance } from "./SubjectPerformance";
 import { AtRiskStudents } from "./AtRiskStudents";
 import { UpcomingEvents } from "./UpcomingEvents";
 import { NoticeBoard } from "./NoticeBoard";
+import { SectionView } from "./SectionViews";
 import { SkeletonCard } from "../ui/Skeleton";
 import { Icon } from "../ui/Icon";
 
@@ -125,37 +126,41 @@ export function AdminDashboard() {
           />
 
           <ContentArea>
-            {loading ? (
-              <DashboardSkeleton />
-            ) : error ? (
-              <div className="ds-error" role="alert">
-                <p className="ds-error__msg">Could not load dashboard data.</p>
-                <button className="ds-error__retry" onClick={fetchData} type="button">
-                  <Icon name="refresh-cw" size={14} />
-                  Retry
-                </button>
-              </div>
+            {activeNavItem === "dashboard" ? (
+              loading ? (
+                <DashboardSkeleton />
+              ) : error ? (
+                <div className="ds-error" role="alert">
+                  <p className="ds-error__msg">Could not load dashboard data.</p>
+                  <button className="ds-error__retry" onClick={fetchData} type="button">
+                    <Icon name="refresh-cw" size={14} />
+                    Retry
+                  </button>
+                </div>
+              ) : (
+                <div className="ds-content-inner">
+                  <GreetingRow summary={dashData.summary} />
+
+                  <KPIRow kpis={dashData.kpis} shouldAnimate={shouldAnimate} />
+
+                  <div className="ds-grid-chart">
+                    <AttendanceChart data={dashData.attendance} shouldAnimate={shouldAnimate} />
+                    <FeeDonut data={dashData.fees} />
+                  </div>
+
+                  <div className="ds-grid-2">
+                    <SubjectPerformance subjects={dashData.subjects} shouldAnimate={shouldAnimate} />
+                    {showAdvanced && <AtRiskStudents data={dashData.atRisk} />}
+                  </div>
+
+                  <div className="ds-grid-2">
+                    <UpcomingEvents events={dashData.events} />
+                    <NoticeBoard notices={dashData.notices} />
+                  </div>
+                </div>
+              )
             ) : (
-              <div className="ds-content-inner">
-                <GreetingRow summary={dashData.summary} />
-
-                <KPIRow kpis={dashData.kpis} shouldAnimate={shouldAnimate} />
-
-                <div className="ds-grid-chart">
-                  <AttendanceChart data={dashData.attendance} shouldAnimate={shouldAnimate} />
-                  <FeeDonut data={dashData.fees} />
-                </div>
-
-                <div className="ds-grid-2">
-                  <SubjectPerformance subjects={dashData.subjects} shouldAnimate={shouldAnimate} />
-                  {showAdvanced && <AtRiskStudents data={dashData.atRisk} />}
-                </div>
-
-                <div className="ds-grid-2">
-                  <UpcomingEvents events={dashData.events} />
-                  <NoticeBoard notices={dashData.notices} />
-                </div>
-              </div>
+              <SectionView section={activeNavItem} view={activeView} />
             )}
           </ContentArea>
         </div>

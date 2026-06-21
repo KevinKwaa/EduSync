@@ -13,7 +13,7 @@ export function AtRiskStudents({ data }) {
   const theme = useTheme();
   if (!data) return null;
   const { totalFlagged, students } = data;
-  const avatarVariant = theme === "light" ? "onyx" : "neutral";
+  const avatarVariant = theme === "light" ? "onyx" : "crimson";
 
   return (
     <Card className="d-atrisk">
