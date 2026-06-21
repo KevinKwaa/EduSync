@@ -14,3 +14,7 @@
 @media (prefers-reduced-motion: reduce) {
   .l-content { animation: none; }
 }
+
+@media (max-width: 520px) {
+  .l-content { padding: 14px; }
+}

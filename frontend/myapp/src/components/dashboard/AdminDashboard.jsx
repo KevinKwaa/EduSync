@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { ThemeContext } from "../../hooks/useTheme";
 import { useAnimateData } from "../../hooks/useAnimateData";
+import { SECTION_TABS } from "../../constants/nav";
 
 import {
   getDashboardSummary,
@@ -63,10 +64,22 @@ function DashboardSkeleton() {
 export function AdminDashboard() {
   const [theme, setTheme] = useState("light");
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
-  const [activeView, setActiveView] = useState("summary");
   const [activeNavItem, setActiveNavItem] = useState("dashboard");
+  const [activeView, setActiveView] = useState("summary");
   const [showAdvanced, setShowAdvanced] = useState(true);
   const { shouldAnimate } = useAnimateData(true);
+
+  const currentTabs = SECTION_TABS[activeNavItem] ?? SECTION_TABS.dashboard;
+
+  useEffect(() => {
+    if (window.innerWidth < 640) setSidebarCollapsed(true);
+  }, []);
+
+  function handleNavChange(item) {
+    setActiveNavItem(item);
+    const tabs = SECTION_TABS[item] ?? SECTION_TABS.dashboard;
+    setActiveView(tabs[0].id);
+  }
 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
@@ -111,14 +124,15 @@ export function AdminDashboard() {
   return (
     <ThemeContext.Provider value={theme}>
       <div className="ds-dashboard" data-theme={theme}>
-        <IconRail activeNavItem={activeNavItem} onNavChange={setActiveNavItem} />
+        <IconRail activeNavItem={activeNavItem} onNavChange={handleNavChange} />
 
-        <Sidebar collapsed={sidebarCollapsed} activeNavItem={activeNavItem} onNavChange={setActiveNavItem} />
+        <Sidebar collapsed={sidebarCollapsed} activeNavItem={activeNavItem} onNavChange={handleNavChange} />
 
         <div className="ds-main">
           <TopNav
             sidebarCollapsed={sidebarCollapsed}
             onToggleSidebar={() => setSidebarCollapsed((c) => !c)}
+            views={currentTabs}
             activeView={activeView}
             onViewChange={setActiveView}
             theme={theme}

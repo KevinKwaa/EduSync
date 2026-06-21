@@ -3,6 +3,8 @@ import {
   Settings, Building2, GraduationCap, Layers, FileText, Plane, Megaphone,
   PanelLeft, Search, Bell, Plus, Calendar, ChevronDown, TrendingUp, Sparkles,
   Sun, Moon, RefreshCw,
+  Check, X, AlertCircle, TrendingDown, Clock, ChevronRight, ArrowUp, ArrowDown,
+  Minus, AlertTriangle, UserCheck, BookCheck, Send, Edit3, Archive,
 } from 'lucide-react';
 
 const MAP = {
@@ -25,11 +27,26 @@ const MAP = {
   'plus':             Plus,
   'calendar':         Calendar,
   'chevron-down':     ChevronDown,
+  'chevron-right':    ChevronRight,
   'trending-up':      TrendingUp,
+  'trending-down':    TrendingDown,
   'sparkles':         Sparkles,
   'sun':              Sun,
   'moon':             Moon,
   'refresh-cw':       RefreshCw,
+  'check':            Check,
+  'x':                X,
+  'alert-circle':     AlertCircle,
+  'alert-triangle':   AlertTriangle,
+  'clock':            Clock,
+  'arrow-up':         ArrowUp,
+  'arrow-down':       ArrowDown,
+  'minus':            Minus,
+  'user-check':       UserCheck,
+  'book-check':       BookCheck,
+  'send':             Send,
+  'edit-3':           Edit3,
+  'archive':          Archive,
 };
 
 export function Icon({ name, size = 16, strokeWidth = 1.75, className, style }) {

@@ -36,7 +36,12 @@
   display: flex;
   align-items: center;
   gap: 2px;
+  flex-shrink: 1;
+  min-width: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
 }
+.l-topnav__tabs::-webkit-scrollbar { display: none; }
 
 .l-topnav__tab {
   padding: 8px 13px;
@@ -212,5 +217,10 @@
 
 @media (max-width: 768px) {
   .l-topnav__search-input { min-width: 160px; }
-  .l-topnav__cta span { display: none; }
+  .l-topnav__cta-text { display: none; }
+}
+
+@media (max-width: 540px) {
+  .l-topnav__search { display: none; }
+  .l-topnav { gap: 10px; padding: 0 14px; }
 }

@@ -1,13 +1,7 @@
 import { Icon } from "../ui/Icon";
 import "./TopNav.css";
 
-const VIEWS = [
-  { id: "summary", label: "Summary", disabled: false },
-  { id: "performance", label: "Performance", disabled: true },
-  { id: "operations", label: "Operations", disabled: true },
-];
-
-export function TopNav({ sidebarCollapsed, onToggleSidebar, activeView, onViewChange, theme, onToggleTheme }) {
+export function TopNav({ sidebarCollapsed, onToggleSidebar, views, activeView, onViewChange, theme, onToggleTheme }) {
   const isLightMode = theme === "light";
 
   return (
@@ -29,8 +23,8 @@ export function TopNav({ sidebarCollapsed, onToggleSidebar, activeView, onViewCh
         />
       </button>
 
-      <nav className="l-topnav__tabs" aria-label="Dashboard view">
-        {VIEWS.map((view) => (
+      <nav className="l-topnav__tabs" aria-label="Section view">
+        {(views || []).map((view) => (
           <button
             key={view.id}
             className={[
@@ -79,7 +73,7 @@ export function TopNav({ sidebarCollapsed, onToggleSidebar, activeView, onViewCh
 
         <button className="l-topnav__cta" type="button">
           <Icon name="plus" size={15} />
-          New admission
+          <span className="l-topnav__cta-text">New admission</span>
         </button>
       </div>
     </header>

@@ -4,7 +4,7 @@ import "./IconRail.css";
 
 export function IconRail({ activeNavItem, onNavChange }) {
   return (
-    <nav className="l-rail" aria-label="Main navigation" data-theme="light">
+    <nav className="l-rail" aria-label="Main navigation" data-theme="dark">
       <div className="l-rail__logo" aria-label="EduSync">
         E
       </div>

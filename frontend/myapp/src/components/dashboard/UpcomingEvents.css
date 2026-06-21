@@ -38,8 +38,6 @@
 }
 
 .d-events__detail {
-  border-left: 2px solid var(--accent);
-  padding-left: 12px;
   min-width: 0;
   flex: 1;
 }
