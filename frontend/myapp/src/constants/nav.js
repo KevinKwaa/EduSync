@@ -1,5 +1,5 @@
 export const SECTION_TABS = {
-  dashboard:    [{ id: 'summary', label: 'Summary' }, { id: 'performance', label: 'Performance', disabled: true }, { id: 'operations', label: 'Operations', disabled: true }],
+  dashboard:    [{ id: 'summary', label: 'Summary' }, { id: 'performance', label: 'Performance' }, { id: 'operations', label: 'Operations' }],
   people:       [{ id: 'directory', label: 'Directory' }, { id: 'stats', label: 'Stats' }, { id: 'watchlist', label: 'Watchlist' }],
   academics:    [{ id: 'overview', label: 'Overview' }, { id: 'by-subject', label: 'By subject' }, { id: 'interventions', label: 'Interventions' }],
   finance:      [{ id: 'summary', label: 'Summary' }, { id: 'collections', label: 'Collections' }, { id: 'reports', label: 'Reports' }],

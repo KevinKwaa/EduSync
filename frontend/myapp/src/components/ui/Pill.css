@@ -18,20 +18,20 @@
 
 .ui-pill--accent {
   background: var(--accent-wash);
-  color: var(--accent);
+  color: var(--accent-text);
 }
 
 .ui-pill--success {
   background: rgba(46, 125, 91, 0.10);
-  color: var(--success);
+  color: var(--success-text);
 }
 
 .ui-pill--warning {
   background: rgba(183, 121, 31, 0.12);
-  color: var(--warning);
+  color: var(--warning-text);
 }
 
 .ui-pill--danger {
   background: var(--accent-wash);
-  color: var(--accent);
+  color: var(--accent-text);
 }

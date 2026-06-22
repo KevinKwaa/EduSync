@@ -87,7 +87,7 @@
 }
 
 [data-theme="light"] .l-sidebar__item--active {
-  color: var(--accent);
+  color: var(--accent-text);
 }
 
 .l-sidebar__item-icon {
@@ -96,7 +96,7 @@
 }
 
 .l-sidebar__item--active .l-sidebar__item-icon {
-  color: var(--accent);
+  color: var(--accent-text);
 }
 
 [data-theme="light"] .l-sidebar__item--active .l-sidebar__item-icon {

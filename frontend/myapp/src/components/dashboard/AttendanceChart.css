@@ -30,7 +30,7 @@
 }
 
 .d-attendance__rate--accent {
-  color: var(--accent);
+  color: var(--accent-text);
   font-weight: 600;
 }
 
@@ -73,6 +73,6 @@
 }
 
 .d-attendance__day--accent {
-  color: var(--accent);
+  color: var(--accent-text);
   font-weight: 600;
 }

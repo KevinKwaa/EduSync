@@ -152,25 +152,59 @@ export function AdminDashboard() {
                   </button>
                 </div>
               ) : (
-                <div className="ds-content-inner">
+                <div className="ds-content-inner" key={activeView}>
                   <GreetingRow summary={dashData.summary} />
 
-                  <KPIRow kpis={dashData.kpis} shouldAnimate={shouldAnimate} />
+                  {activeView === "summary" && (
+                    <>
+                      <KPIRow kpis={dashData.kpis} shouldAnimate={shouldAnimate} />
 
-                  <div className="ds-grid-chart">
-                    <AttendanceChart data={dashData.attendance} shouldAnimate={shouldAnimate} />
-                    <FeeDonut data={dashData.fees} />
-                  </div>
+                      <div className="ds-grid-chart">
+                        <AttendanceChart data={dashData.attendance} shouldAnimate={shouldAnimate} />
+                        <FeeDonut data={dashData.fees} />
+                      </div>
 
-                  <div className="ds-grid-2">
-                    <SubjectPerformance subjects={dashData.subjects} shouldAnimate={shouldAnimate} />
-                    {showAdvanced && <AtRiskStudents data={dashData.atRisk} />}
-                  </div>
+                      <div className="ds-grid-2">
+                        <SubjectPerformance subjects={dashData.subjects} shouldAnimate={shouldAnimate} />
+                        {showAdvanced && <AtRiskStudents data={dashData.atRisk} />}
+                      </div>
 
-                  <div className="ds-grid-2">
-                    <UpcomingEvents events={dashData.events} />
-                    <NoticeBoard notices={dashData.notices} />
-                  </div>
+                      <div className="ds-grid-2">
+                        <UpcomingEvents events={dashData.events} />
+                        <NoticeBoard notices={dashData.notices} />
+                      </div>
+                    </>
+                  )}
+
+                  {activeView === "performance" && (
+                    <>
+                      <KPIRow kpis={dashData.kpis} shouldAnimate={shouldAnimate} />
+
+                      <div className="ds-grid-chart">
+                        <AttendanceChart data={dashData.attendance} shouldAnimate={shouldAnimate} />
+                        <FeeDonut data={dashData.fees} />
+                      </div>
+
+                      <div className="ds-grid-2">
+                        <SubjectPerformance subjects={dashData.subjects} shouldAnimate={shouldAnimate} />
+                        <AtRiskStudents data={dashData.atRisk} />
+                      </div>
+                    </>
+                  )}
+
+                  {activeView === "operations" && (
+                    <>
+                      <div className="ds-grid-2">
+                        <UpcomingEvents events={dashData.events} />
+                        <NoticeBoard notices={dashData.notices} />
+                      </div>
+
+                      <div className="ds-grid-chart">
+                        <AttendanceChart data={dashData.attendance} shouldAnimate={shouldAnimate} />
+                        <FeeDonut data={dashData.fees} />
+                      </div>
+                    </>
+                  )}
                 </div>
               )
             ) : (

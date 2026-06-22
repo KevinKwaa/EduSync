@@ -41,10 +41,10 @@
   gap: 3px;
 }
 
-.d-kpi__delta--success { color: var(--success); }
+.d-kpi__delta--success { color: var(--success-text); }
 .d-kpi__delta--muted   { color: var(--text-muted); }
-.d-kpi__delta--warning { color: var(--warning); }
-.d-kpi__delta--danger  { color: var(--accent); }
+.d-kpi__delta--warning { color: var(--warning-text); }
+.d-kpi__delta--danger  { color: var(--accent-text); }
 
 @media (max-width: 1024px) {
   .d-kpi-row { grid-template-columns: repeat(2, 1fr); }
