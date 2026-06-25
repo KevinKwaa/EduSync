@@ -1,0 +1,429 @@
+/* ═══════════════════════════════════════
+   AddStudentPage
+═══════════════════════════════════════ */
+
+.asp-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #ECECE9;
+  font-family: var(--font-sans, 'Inter', sans-serif);
+}
+
+/* ── Top bar ─────────────────────────── */
+.asp-topbar {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  height: 52px;
+  padding: 0 28px;
+  background: #FFFFFF;
+  border-bottom: 1px solid #E2E2DF;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.asp-topbar__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #2A2A2A;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+  transition: color 150ms ease;
+  flex-shrink: 0;
+}
+.asp-topbar__back:hover { color: #8C151D; }
+
+.asp-topbar__crumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #888888;
+}
+
+.asp-topbar__sep { color: #D4D4D0; }
+
+.asp-topbar__crumb-current {
+  color: #0D0D0D;
+  font-weight: 500;
+}
+
+.asp-topbar__logout {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+  padding: 0 12px;
+  height: 32px;
+  background: none;
+  border: 1px solid #E2E2DF;
+  border-radius: 7px;
+  font-family: var(--font-sans, 'Inter', sans-serif);
+  font-size: 13px;
+  font-weight: 500;
+  color: #888888;
+  cursor: pointer;
+  transition: border-color 150ms ease, color 150ms ease;
+  flex-shrink: 0;
+}
+.asp-topbar__logout:hover { border-color: #8C151D; color: #8C151D; }
+
+/* ── Page heading ────────────────────── */
+.asp-page-head {
+  background: #FFFFFF;
+  border-bottom: 1px solid #E2E2DF;
+  padding: 0 28px;
+}
+
+.asp-page-head__inner {
+  max-width: 720px;
+  padding: 24px 0 22px;
+}
+
+.asp-page-head__title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0D0D0D;
+  letter-spacing: -0.3px;
+  margin-bottom: 4px;
+}
+
+.asp-page-head__sub {
+  font-size: 13px;
+  color: #888888;
+}
+
+/* ── Form body ───────────────────────── */
+.asp-form {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.asp-form__body {
+  flex: 1;
+  padding: 24px 28px 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 748px;
+  width: 100%;
+  animation: viewIn 360ms var(--ease-out, cubic-bezier(0.16,1,0.3,1)) both;
+}
+
+/* ── Section card ────────────────────── */
+.asp-section {
+  background: #FFFFFF;
+  border: 1px solid #E2E2DF;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.asp-section__head {
+  padding: 20px 24px 0;
+  border-bottom: 1px solid #F0F0ED;
+  padding-bottom: 16px;
+  margin-bottom: 4px;
+}
+
+.asp-section__title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0D0D0D;
+  margin-bottom: 3px;
+}
+
+.asp-section__sub {
+  font-size: 12px;
+  color: #888888;
+}
+
+/* ── Field grid ──────────────────────── */
+.asp-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  padding: 4px 0 0; /* no bottom padding — last row's border-bottom is the edge */
+}
+
+/* Remove bottom border from last row to prevent double-line at card bottom */
+.asp-grid > .asp-field:last-child,
+.asp-grid > .asp-field:nth-last-child(2):nth-child(odd) {
+  border-bottom: none;
+}
+
+.asp-field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 16px 24px;
+  border-right: 1px solid #F0F0ED;
+  border-bottom: 1px solid #F0F0ED;
+}
+
+.asp-field:nth-child(even) { border-right: none; }
+
+.asp-field--wide {
+  grid-column: 1 / -1;
+  border-right: none;
+}
+
+.asp-field--invalid .asp-field__label { color: #8C151D; }
+
+.asp-field__top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.asp-field__label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #2A2A2A;
+  line-height: 1;
+}
+
+.asp-field__req { color: #8C151D; }
+
+.asp-field__hint {
+  font-size: 11px;
+  color: #B5B5B2;
+  font-family: var(--font-mono, monospace);
+  flex-shrink: 0;
+}
+
+.asp-field__err {
+  font-size: 11px;
+  color: #8C151D;
+  flex-shrink: 0;
+}
+
+/* ── Inputs ──────────────────────────── */
+.asp-input {
+  width: 100%;
+  height: 36px;
+  padding: 0 11px;
+  background: #F9F9F7;
+  border: 1px solid #D4D4D0;
+  border-radius: 7px;
+  font-family: var(--font-sans, 'Inter', sans-serif);
+  font-size: 13px;
+  color: #0D0D0D;
+  transition: border-color 150ms ease, box-shadow 150ms ease, background 150ms ease;
+  outline: none;
+  -webkit-appearance: none;
+}
+
+.asp-input::placeholder { color: #B5B5B2; }
+
+.asp-input:focus {
+  background: #FFFFFF;
+  border-color: #8C151D;
+  box-shadow: 0 0 0 3px rgba(140, 21, 29, 0.08);
+}
+
+.asp-input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: #F0F0ED;
+}
+
+.asp-input--err {
+  border-color: #C42531;
+  background: rgba(196, 37, 49, 0.03);
+}
+.asp-input--err:focus {
+  box-shadow: 0 0 0 3px rgba(196, 37, 49, 0.10);
+}
+
+.asp-select {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  padding-right: 28px;
+}
+
+/* ── Radio group ─────────────────────── */
+.asp-radio-group {
+  display: flex;
+  gap: 8px;
+}
+
+.asp-radio {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  height: 36px;
+  padding: 0 14px;
+  border: 1px solid #D4D4D0;
+  border-radius: 7px;
+  font-size: 13px;
+  color: #2A2A2A;
+  cursor: pointer;
+  background: #F9F9F7;
+  transition: border-color 150ms ease, background 150ms ease, color 150ms ease;
+  user-select: none;
+}
+
+.asp-radio input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.asp-radio--on {
+  border-color: #8C151D;
+  background: rgba(140, 21, 29, 0.06);
+  color: #8C151D;
+  font-weight: 500;
+}
+
+.asp-radio:hover:not(.asp-radio--on) {
+  border-color: #B5B5B2;
+  background: #FFFFFF;
+}
+
+/* ── Action bar ──────────────────────── */
+.asp-actionbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 14px 28px;
+  background: #FFFFFF;
+  border-top: 1px solid #E2E2DF;
+  box-shadow: 0 -4px 16px rgba(0,0,0,0.06);
+  z-index: 20;
+}
+
+/* ── Buttons ─────────────────────────── */
+.asp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  height: 38px;
+  padding: 0 18px;
+  border-radius: 8px;
+  font-family: var(--font-sans, 'Inter', sans-serif);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 150ms ease, box-shadow 150ms ease, border-color 150ms ease;
+}
+
+.asp-btn--ghost {
+  background: transparent;
+  border: 1px solid #D4D4D0;
+  color: #2A2A2A;
+}
+.asp-btn--ghost:hover {
+  background: #F5F5F3;
+  border-color: #B5B5B2;
+}
+
+.asp-btn--primary {
+  background: #8C151D;
+  border: 1px solid transparent;
+  color: #F5F5F3;
+  box-shadow: 0 2px 8px rgba(140,21,29,0.30), 0 0 0 1px rgba(140,21,29,0.18);
+}
+.asp-btn--primary:hover:not(:disabled) {
+  background: #7A1119;
+  box-shadow: 0 4px 16px rgba(140,21,29,0.45), 0 0 0 1px rgba(140,21,29,0.28);
+}
+.asp-btn--primary:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.asp-btn__spinner {
+  width: 13px;
+  height: 13px;
+  border: 2px solid rgba(245,245,243,0.3);
+  border-top-color: #F5F5F3;
+  border-radius: 50%;
+  animation: asp-spin 0.65s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes asp-spin { to { transform: rotate(360deg); } }
+
+/* ── Success state ───────────────────── */
+.asp-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex: 1;
+  min-height: 100vh;
+  padding: 40px 24px;
+  text-align: center;
+  animation: viewIn 340ms var(--ease-out, cubic-bezier(0.16,1,0.3,1)) both;
+}
+
+.asp-success__icon-wrap {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(46, 125, 91, 0.10);
+  border: 1px solid rgba(46, 125, 91, 0.20);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2E7D5B;
+}
+
+.asp-success__title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0D0D0D;
+  letter-spacing: -0.3px;
+}
+
+.asp-success__sub {
+  font-size: 14px;
+  color: #666666;
+  line-height: 1.6;
+}
+
+.asp-success__sub strong { color: #0D0D0D; font-weight: 600; }
+
+.asp-success__actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+/* ── Responsive ──────────────────────── */
+@media (max-width: 640px) {
+  .asp-topbar { padding: 0 16px; }
+  .asp-topbar__crumb { display: none; }
+  .asp-page-head { padding: 0 16px; }
+  .asp-form__body { padding: 16px 16px 120px; }
+  .asp-grid { grid-template-columns: 1fr; }
+  .asp-field { border-right: none; }
+  .asp-field--wide { grid-column: 1; }
+  .asp-actionbar { padding: 12px 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .asp-btn__spinner { animation: none; }
+  .asp-success { animation: none; }
+}

@@ -62,6 +62,16 @@
   flex-shrink: 0;
 }
 
+.l-rail__logout {
+  flex-shrink: 0;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+.l-rail__logout:hover {
+  color: #EB5C61 !important;
+}
+
 .l-rail__btn[data-label] {
   position: relative;
 }

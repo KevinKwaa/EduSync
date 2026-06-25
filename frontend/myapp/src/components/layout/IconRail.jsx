@@ -1,8 +1,10 @@
 import { RAIL_ITEMS } from "../../constants/nav";
+import { useAuth } from "../../context/AuthContext";
 import { Icon } from "../ui/Icon";
 import "./IconRail.css";
 
 export function IconRail({ activeNavItem, onNavChange }) {
+  const { logout } = useAuth();
   return (
     <nav className="l-rail" aria-label="Main navigation" data-theme="dark">
       <div className="l-rail__logo" aria-label="EduSync">
@@ -35,6 +37,16 @@ export function IconRail({ activeNavItem, onNavChange }) {
         type="button"
       >
         <Icon name="settings" size={19} />
+      </button>
+      <button
+        className="l-rail__btn l-rail__logout"
+        aria-label="Sign out"
+        data-label="Sign out"
+        title="Sign out"
+        onClick={logout}
+        type="button"
+      >
+        <Icon name="log-out" size={19} />
       </button>
     </nav>
   );

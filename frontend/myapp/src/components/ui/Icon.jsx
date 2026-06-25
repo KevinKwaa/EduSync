@@ -5,6 +5,8 @@ import {
   Sun, Moon, RefreshCw,
   Check, X, AlertCircle, TrendingDown, Clock, ChevronRight, ArrowUp, ArrowDown,
   Minus, AlertTriangle, UserCheck, BookCheck, Send, Edit3, Archive,
+  Eye, EyeOff, UserPlus, LogOut, ChevronLeft, ArrowRight, Lock, Mail, User,
+  Phone, CreditCard, CheckCircle, Home,
 } from 'lucide-react';
 
 const MAP = {
@@ -28,6 +30,7 @@ const MAP = {
   'calendar':         Calendar,
   'chevron-down':     ChevronDown,
   'chevron-right':    ChevronRight,
+  'chevron-left':     ChevronLeft,
   'trending-up':      TrendingUp,
   'trending-down':    TrendingDown,
   'sparkles':         Sparkles,
@@ -35,18 +38,30 @@ const MAP = {
   'moon':             Moon,
   'refresh-cw':       RefreshCw,
   'check':            Check,
+  'check-circle':     CheckCircle,
   'x':                X,
   'alert-circle':     AlertCircle,
   'alert-triangle':   AlertTriangle,
   'clock':            Clock,
   'arrow-up':         ArrowUp,
   'arrow-down':       ArrowDown,
+  'arrow-right':      ArrowRight,
   'minus':            Minus,
   'user-check':       UserCheck,
+  'user-plus':        UserPlus,
   'book-check':       BookCheck,
   'send':             Send,
   'edit-3':           Edit3,
   'archive':          Archive,
+  'eye':              Eye,
+  'eye-off':          EyeOff,
+  'log-out':          LogOut,
+  'lock':             Lock,
+  'mail':             Mail,
+  'user':             User,
+  'phone':            Phone,
+  'credit-card':      CreditCard,
+  'home':             Home,
 };
 
 export function Icon({ name, size = 16, strokeWidth = 1.75, className, style }) {
