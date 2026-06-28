@@ -86,28 +86,28 @@ function StudentLogin({ onLogin }) {
   }
 
   return (
-    <div className="sp-login-root" data-theme="light">
-      <header className="sp-login-header">
-        <div className="sp-login-header__brand">
-          <span className="sp-mark" aria-hidden="true" />
-          <span className="sp-wordmark">EduSync</span>
+    <div className="portal-login-root" data-theme="light">
+      <header className="portal-login-header">
+        <div className="portal-login-header__brand">
+          <span className="portal-mark" aria-hidden="true" />
+          <span className="portal-wordmark">EduSync</span>
         </div>
         <span className="sp-badge">Student Portal</span>
       </header>
 
-      <main className="sp-login-main">
-        <div className="sp-login-card">
+      <main className="portal-login-main">
+        <div className="portal-login-card">
           <div className="sp-login-card__icon" aria-hidden="true">
             <Icon name="graduation-cap" size={22} />
           </div>
-          <h1 className="sp-login-card__title">Student sign in</h1>
-          <p className="sp-login-card__sub">
+          <h1 className="portal-login-card__title">Student sign in</h1>
+          <p className="portal-login-card__sub">
             Sign in with your student ID and password to access your timetable, grades, and notices.
           </p>
 
-          <form className="sp-login-form" onSubmit={handleSubmit} noValidate>
+          <form className="portal-login-form" onSubmit={handleSubmit} noValidate>
             {error && (
-              <div className="sp-login-form__error" role="alert" aria-live="polite">
+              <div className="portal-login-form__error" role="alert" aria-live="polite">
                 <Icon name="alert-circle" size={14} />
                 <span>{error}</span>
               </div>
@@ -169,15 +169,15 @@ function StudentLogin({ onLogin }) {
             </button>
           </form>
 
-          <p className="sp-login-card__footer">
-            <Link to="/parent" className="sp-login-card__link">Parent portal</Link>
+          <p className="portal-login-card__footer">
+            <Link to="/parent" className="portal-login-card__link">Parent portal</Link>
             <span aria-hidden="true"> · </span>
-            <Link to="/login" className="sp-login-card__link">Staff login</Link>
+            <Link to="/login" className="portal-login-card__link">Staff login</Link>
           </p>
         </div>
       </main>
 
-      <footer className="sp-login-footer">
+      <footer className="portal-login-footer">
         SMK Bandar Utama · smkbu@moe.edu.my · 03-7722 1234
       </footer>
     </div>
@@ -193,28 +193,28 @@ function StudentDashboard({ user, onLogout }) {
   const overdueCount = d.assignments.filter(a => a.status === 'overdue').length;
 
   return (
-    <div className="sp-dash-root" data-theme="light">
-      <header className="sp-dash-header">
-        <div className="sp-dash-header__left">
-          <span className="sp-mark" aria-hidden="true" />
-          <span className="sp-wordmark">EduSync</span>
+    <div className="portal-dash-root" data-theme="light">
+      <header className="portal-dash-header">
+        <div className="portal-dash-header__left">
+          <span className="portal-mark" aria-hidden="true" />
+          <span className="portal-wordmark">EduSync</span>
           <span className="sp-badge">Student Portal</span>
         </div>
-        <div className="sp-dash-header__right">
-          <div className="sp-dash-user">
+        <div className="portal-dash-header__right">
+          <div className="portal-dash-user">
             <div className="sp-dash-user__avatar" aria-hidden="true">{user.initials}</div>
-            <div className="sp-dash-user__info">
-              <span className="sp-dash-user__name">{user.name}</span>
-              <span className="sp-dash-user__meta">{user.form} · {user.cls}</span>
+            <div className="portal-dash-user__info">
+              <span className="portal-dash-user__name">{user.name}</span>
+              <span className="portal-dash-user__meta">{user.form} · {user.cls}</span>
             </div>
           </div>
-          <button className="sp-dash-logout" onClick={onLogout} type="button" aria-label="Sign out">
+          <button className="portal-dash-logout" onClick={onLogout} type="button" aria-label="Sign out">
             <Icon name="log-out" size={15} />
           </button>
         </div>
       </header>
 
-      <main className="sp-dash-main">
+      <main className="portal-dash-main">
         {/* Greeting */}
         <div className="sp-greeting">
           <h2 className="sp-greeting__title">Selamat datang, {user.name.split(' ')[0]}.</h2>
@@ -223,7 +223,7 @@ function StudentDashboard({ user, onLogout }) {
 
         {/* Timetable */}
         <section aria-labelledby="sp-tt-title">
-          <h3 className="sp-section-title" id="sp-tt-title">Jadual hari ini</h3>
+          <h3 className="portal-section-title" id="sp-tt-title">Jadual hari ini</h3>
           <div className="sp-timetable" role="list" aria-label="Today's timetable">
             {d.timetable.map((p, i) => (
               <div
@@ -242,56 +242,56 @@ function StudentDashboard({ user, onLogout }) {
         </section>
 
         {/* KPI row */}
-        <div className="sp-kpi-row">
-          <div className={`sp-kpi${warn ? ' sp-kpi--warn' : ' sp-kpi--ok'}`}>
-            <span className="sp-kpi__label">Kehadiran</span>
-            <span className="sp-kpi__value">{d.attendance.pct}%</span>
-            <span className={`sp-kpi__tag${warn ? ' sp-kpi__tag--warn' : ' sp-kpi__tag--ok'}`}>
+        <div className="portal-kpi-row">
+          <div className={`portal-kpi${warn ? ' portal-kpi--warn' : ' portal-kpi--ok'}`}>
+            <span className="portal-kpi__label">Kehadiran</span>
+            <span className="portal-kpi__value">{d.attendance.pct}%</span>
+            <span className={`portal-kpi__tag${warn ? ' portal-kpi__tag--warn' : ' portal-kpi__tag--ok'}`}>
               {warn ? <><Icon name="alert-triangle" size={10} /> Di bawah 80%</> : 'Baik'}
             </span>
           </div>
 
-          <div className="sp-kpi">
-            <span className="sp-kpi__label">Purata markah</span>
-            <span className="sp-kpi__value">{d.avgScore.toFixed(1)}</span>
-            <span className="sp-kpi__sub">Semua subjek</span>
+          <div className="portal-kpi">
+            <span className="portal-kpi__label">Purata markah</span>
+            <span className="portal-kpi__value">{d.avgScore.toFixed(1)}</span>
+            <span className="portal-kpi__sub">Semua subjek</span>
           </div>
 
-          <div className={`sp-kpi${overdueCount > 0 ? ' sp-kpi--warn' : ''}`}>
-            <span className="sp-kpi__label">Tugasan</span>
-            <span className="sp-kpi__value">{d.assignments.length}</span>
+          <div className={`portal-kpi${overdueCount > 0 ? ' portal-kpi--warn' : ''}`}>
+            <span className="portal-kpi__label">Tugasan</span>
+            <span className="portal-kpi__value">{d.assignments.length}</span>
             {overdueCount > 0
-              ? <span className="sp-kpi__tag sp-kpi__tag--warn">
+              ? <span className="portal-kpi__tag portal-kpi__tag--warn">
                   <Icon name="alert-triangle" size={10} /> {overdueCount} tertunggak
                 </span>
-              : <span className="sp-kpi__sub">Tiada tertunggak</span>
+              : <span className="portal-kpi__sub">Tiada tertunggak</span>
             }
           </div>
 
-          <div className="sp-kpi sp-kpi--accent">
-            <span className="sp-kpi__label">Peperiksaan akan datang</span>
-            <span className="sp-kpi__value">{d.nextExam.daysLeft} hari</span>
-            <span className="sp-kpi__sub">{d.nextExam.name}</span>
+          <div className="portal-kpi portal-kpi--accent">
+            <span className="portal-kpi__label">Peperiksaan akan datang</span>
+            <span className="portal-kpi__value">{d.nextExam.daysLeft} hari</span>
+            <span className="portal-kpi__sub">{d.nextExam.name}</span>
           </div>
         </div>
 
         {/* Main grid */}
-        <div className="sp-main-grid">
+        <div className="portal-main-grid">
           {/* Left col */}
-          <div className="sp-col">
+          <div className="portal-col">
             {/* Grades */}
-            <div className="sp-card">
-              <h3 className="sp-card__title">Markah terkini</h3>
-              <div className="sp-grades">
+            <div className="portal-card">
+              <h3 className="portal-card__title">Markah terkini</h3>
+              <div className="portal-grades">
                 {d.grades.map(g => (
-                  <div key={g.subject} className="sp-grade-row">
-                    <div className="sp-grade-row__left">
-                      <span className="sp-grade-row__subject">{g.subject}</span>
-                      <span className="sp-grade-row__date">{g.date}</span>
+                  <div key={g.subject} className="portal-grade-row">
+                    <div className="portal-grade-row__left">
+                      <span className="portal-grade-row__subject">{g.subject}</span>
+                      <span className="portal-grade-row__date">{g.date}</span>
                     </div>
-                    <div className="sp-grade-row__right">
-                      <span className="sp-grade-row__score">{g.score}</span>
-                      <span className={`sp-grade-badge sp-grade-badge--${gradeColour(g.score)}`}>{g.grade}</span>
+                    <div className="portal-grade-row__right">
+                      <span className="portal-grade-row__score">{g.score}</span>
+                      <span className={`portal-grade-badge portal-grade-badge--${gradeColour(g.score)}`}>{g.grade}</span>
                     </div>
                   </div>
                 ))}
@@ -299,8 +299,8 @@ function StudentDashboard({ user, onLogout }) {
             </div>
 
             {/* Assignments */}
-            <div className="sp-card">
-              <h3 className="sp-card__title">Tugasan</h3>
+            <div className="portal-card">
+              <h3 className="portal-card__title">Tugasan</h3>
               <div className="sp-assignments">
                 {d.assignments.map(a => (
                   <div key={a.id} className={`sp-task sp-task--${a.status}`}>
@@ -319,10 +319,10 @@ function StudentDashboard({ user, onLogout }) {
           </div>
 
           {/* Right col */}
-          <div className="sp-col">
+          <div className="portal-col">
             {/* Upcoming exams */}
-            <div className="sp-card">
-              <h3 className="sp-card__title">Peperiksaan akan datang</h3>
+            <div className="portal-card">
+              <h3 className="portal-card__title">Peperiksaan akan datang</h3>
               <div className="sp-exams">
                 {d.exams.map(ex => (
                   <div key={ex.name} className="sp-exam-row">
@@ -340,15 +340,15 @@ function StudentDashboard({ user, onLogout }) {
             </div>
 
             {/* Notices */}
-            <div className="sp-card">
-              <h3 className="sp-card__title">Notis sekolah</h3>
-              <div className="sp-notices">
+            <div className="portal-card">
+              <h3 className="portal-card__title">Notis sekolah</h3>
+              <div className="portal-notices">
                 {d.notices.map(n => (
-                  <div key={n.id} className={`sp-notice${n.priority ? ' sp-notice--priority' : ''}`}>
-                    {n.priority && <Icon name="alert-circle" size={12} className="sp-notice__icon" />}
-                    <div className="sp-notice__body">
-                      <p className="sp-notice__title">{n.title}</p>
-                      <span className="sp-notice__time">{n.time}</span>
+                  <div key={n.id} className={`portal-notice${n.priority ? ' portal-notice--priority' : ''}`}>
+                    {n.priority && <Icon name="alert-circle" size={12} className="portal-notice__icon" />}
+                    <div className="portal-notice__body">
+                      <p className="portal-notice__title">{n.title}</p>
+                      <span className="portal-notice__time">{n.time}</span>
                     </div>
                   </div>
                 ))}
@@ -357,7 +357,7 @@ function StudentDashboard({ user, onLogout }) {
 
             {/* Attendance warning */}
             {warn && (
-              <div className="sp-card sp-card--alert" role="alert">
+              <div className="portal-card sp-card--alert" role="alert">
                 <div className="sp-alert-card">
                   <Icon name="alert-triangle" size={16} className="sp-alert-card__icon" />
                   <div>
@@ -375,7 +375,7 @@ function StudentDashboard({ user, onLogout }) {
         </div>
       </main>
 
-      <footer className="sp-dash-footer">
+      <footer className="portal-dash-footer">
         <p>SMK Bandar Utama &nbsp;·&nbsp;
           <a href="mailto:smkbu@moe.edu.my">smkbu@moe.edu.my</a>
           &nbsp;·&nbsp; 03-7722 1234

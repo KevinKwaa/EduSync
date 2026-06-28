@@ -1,8 +1,10 @@
+import { useNavigate } from "react-router-dom";
 import { Icon } from "../ui/Icon";
 import "./TopNav.css";
 
 export function TopNav({ sidebarCollapsed, onToggleSidebar, views, activeView, onViewChange, theme, onToggleTheme }) {
   const isLightMode = theme === "light";
+  const navigate = useNavigate();
 
   return (
     <header className="l-topnav">
@@ -71,7 +73,7 @@ export function TopNav({ sidebarCollapsed, onToggleSidebar, views, activeView, o
           <Icon name={isLightMode ? "moon" : "sun"} size={16} />
         </button>
 
-        <button className="l-topnav__cta" type="button">
+        <button className="l-topnav__cta" type="button" onClick={() => navigate('/students/register')}>
           <Icon name="plus" size={15} />
           <span className="l-topnav__cta-text">New admission</span>
         </button>

@@ -1,4 +1,5 @@
 @import './tokens/colors.css';
+@import './styles/portal.css';
 
 *, *::before, *::after {
   box-sizing: border-box;

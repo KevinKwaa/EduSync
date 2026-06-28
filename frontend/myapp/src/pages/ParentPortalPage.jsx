@@ -78,28 +78,28 @@ function ParentLogin({ onLogin }) {
   }
 
   return (
-    <div className="pp-login-root" data-theme="light">
-      <header className="pp-login-header">
-        <div className="pp-login-header__brand">
-          <span className="pp-mark" aria-hidden="true" />
-          <span className="pp-wordmark">EduSync</span>
+    <div className="portal-login-root" data-theme="light">
+      <header className="portal-login-header">
+        <div className="portal-login-header__brand">
+          <span className="portal-mark" aria-hidden="true" />
+          <span className="portal-wordmark">EduSync</span>
         </div>
         <span className="pp-badge">Parent Portal</span>
       </header>
 
-      <main className="pp-login-main">
-        <div className="pp-login-card">
+      <main className="portal-login-main">
+        <div className="portal-login-card">
           <div className="pp-login-card__icon" aria-hidden="true">
             <Icon name="user" size={22} />
           </div>
-          <h1 className="pp-login-card__title">Parent / Guardian sign in</h1>
-          <p className="pp-login-card__sub">
+          <h1 className="portal-login-card__title">Parent / Guardian sign in</h1>
+          <p className="portal-login-card__sub">
             Enter your MyKad IC number and password to view your child's progress at SMK Bandar Utama.
           </p>
 
-          <form className="pp-login-form" onSubmit={handleSubmit} noValidate>
+          <form className="portal-login-form" onSubmit={handleSubmit} noValidate>
             {error && (
-              <div className="pp-login-form__error" role="alert" aria-live="polite">
+              <div className="portal-login-form__error" role="alert" aria-live="polite">
                 <Icon name="alert-circle" size={14} />
                 <span>{error}</span>
               </div>
@@ -165,14 +165,14 @@ function ParentLogin({ onLogin }) {
             </button>
           </form>
 
-          <p className="pp-login-card__footer">
+          <p className="portal-login-card__footer">
             School staff?{' '}
-            <Link to="/login" className="pp-login-card__link">Staff login</Link>
+            <Link to="/login" className="portal-login-card__link">Staff login</Link>
           </p>
         </div>
       </main>
 
-      <footer className="pp-login-footer">
+      <footer className="portal-login-footer">
         SMK Bandar Utama · smkbu@moe.edu.my · 03-7722 1234
       </footer>
     </div>
@@ -188,31 +188,31 @@ function ParentDashboard({ user, onLogout }) {
   const warn  = d.attendance.pct < 80;
 
   return (
-    <div className="pp-dash-root" data-theme="light">
+    <div className="portal-dash-root" data-theme="light">
       {/* Header */}
-      <header className="pp-dash-header">
-        <div className="pp-dash-header__left">
-          <span className="pp-mark" aria-hidden="true" />
-          <span className="pp-wordmark">EduSync</span>
+      <header className="portal-dash-header">
+        <div className="portal-dash-header__left">
+          <span className="portal-mark" aria-hidden="true" />
+          <span className="portal-wordmark">EduSync</span>
           <span className="pp-badge">Parent Portal</span>
         </div>
-        <div className="pp-dash-header__right">
-          <div className="pp-dash-user">
+        <div className="portal-dash-header__right">
+          <div className="portal-dash-user">
             <div className="pp-dash-user__avatar" aria-hidden="true">
               {user.name.split(' ').map(w => w[0]).slice(0, 2).join('')}
             </div>
-            <div className="pp-dash-user__info">
-              <span className="pp-dash-user__name">{user.name}</span>
-              <span className="pp-dash-user__role">Guardian · {child.name}</span>
+            <div className="portal-dash-user__info">
+              <span className="portal-dash-user__name">{user.name}</span>
+              <span className="portal-dash-user__meta">Guardian · {child.name}</span>
             </div>
           </div>
-          <button className="pp-dash-logout" onClick={onLogout} type="button" aria-label="Sign out">
+          <button className="portal-dash-logout" onClick={onLogout} type="button" aria-label="Sign out">
             <Icon name="log-out" size={15} />
           </button>
         </div>
       </header>
 
-      <main className="pp-dash-main">
+      <main className="portal-dash-main">
         {/* Child identity bar */}
         <div className="pp-child-bar">
           <div className="pp-child-bar__avatar" aria-hidden="true">{child.initials}</div>
@@ -225,44 +225,44 @@ function ParentDashboard({ user, onLogout }) {
         </div>
 
         {/* KPI row */}
-        <div className="pp-kpi-row">
-          <div className={`pp-kpi${warn ? ' pp-kpi--warn' : ' pp-kpi--ok'}`}>
-            <span className="pp-kpi__label">Attendance</span>
-            <span className="pp-kpi__value">{d.attendance.pct}%</span>
+        <div className="portal-kpi-row">
+          <div className={`portal-kpi${warn ? ' portal-kpi--warn' : ' portal-kpi--ok'}`}>
+            <span className="portal-kpi__label">Attendance</span>
+            <span className="portal-kpi__value">{d.attendance.pct}%</span>
             {warn
-              ? <span className="pp-kpi__tag pp-kpi__tag--warn">
+              ? <span className="portal-kpi__tag portal-kpi__tag--warn">
                   <Icon name="alert-triangle" size={10} /> Below 80%
                 </span>
-              : <span className="pp-kpi__tag pp-kpi__tag--ok">On track</span>
+              : <span className="portal-kpi__tag portal-kpi__tag--ok">On track</span>
             }
           </div>
 
-          <div className="pp-kpi">
-            <span className="pp-kpi__label">Last score</span>
-            <span className="pp-kpi__value">{d.lastScore.score}</span>
-            <span className="pp-kpi__sub">{d.lastScore.subject}</span>
+          <div className="portal-kpi">
+            <span className="portal-kpi__label">Last score</span>
+            <span className="portal-kpi__value">{d.lastScore.score}</span>
+            <span className="portal-kpi__sub">{d.lastScore.subject}</span>
           </div>
 
-          <div className={`pp-kpi${d.fees.outstanding > 0 ? ' pp-kpi--warn' : ' pp-kpi--ok'}`}>
-            <span className="pp-kpi__label">Outstanding fees</span>
-            <span className="pp-kpi__value">RM {d.fees.outstanding.toLocaleString('en-MY')}</span>
-            <span className="pp-kpi__sub">Due {d.fees.nextDue}</span>
+          <div className={`portal-kpi${d.fees.outstanding > 0 ? ' portal-kpi--warn' : ' portal-kpi--ok'}`}>
+            <span className="portal-kpi__label">Outstanding fees</span>
+            <span className="portal-kpi__value">RM {d.fees.outstanding.toLocaleString('en-MY')}</span>
+            <span className="portal-kpi__sub">Due {d.fees.nextDue}</span>
           </div>
 
-          <div className="pp-kpi pp-kpi--accent">
-            <span className="pp-kpi__label">Next exam</span>
-            <span className="pp-kpi__value">{d.nextExam.daysLeft} days</span>
-            <span className="pp-kpi__sub">{d.nextExam.name}</span>
+          <div className="portal-kpi portal-kpi--accent">
+            <span className="portal-kpi__label">Next exam</span>
+            <span className="portal-kpi__value">{d.nextExam.daysLeft} days</span>
+            <span className="portal-kpi__sub">{d.nextExam.name}</span>
           </div>
         </div>
 
         {/* Main grid */}
-        <div className="pp-main-grid">
+        <div className="portal-main-grid">
           {/* Left column */}
-          <div className="pp-col">
+          <div className="portal-col">
             {/* Weekly attendance */}
-            <div className="pp-card">
-              <h3 className="pp-card__title">Attendance this week</h3>
+            <div className="portal-card">
+              <h3 className="portal-card__title">Attendance this week</h3>
               <div className="pp-week">
                 {d.week.map(w => (
                   <div
@@ -285,18 +285,18 @@ function ParentDashboard({ user, onLogout }) {
             </div>
 
             {/* Grades */}
-            <div className="pp-card">
-              <h3 className="pp-card__title">Recent test scores</h3>
-              <div className="pp-grades">
+            <div className="portal-card">
+              <h3 className="portal-card__title">Recent test scores</h3>
+              <div className="portal-grades">
                 {d.grades.map(g => (
-                  <div key={g.subject} className="pp-grade-row">
-                    <div className="pp-grade-row__left">
-                      <span className="pp-grade-row__subject">{g.subject}</span>
-                      <span className="pp-grade-row__date">{g.date}</span>
+                  <div key={g.subject} className="portal-grade-row">
+                    <div className="portal-grade-row__left">
+                      <span className="portal-grade-row__subject">{g.subject}</span>
+                      <span className="portal-grade-row__date">{g.date}</span>
                     </div>
-                    <div className="pp-grade-row__right">
-                      <span className="pp-grade-row__score">{g.score}</span>
-                      <span className={`pp-grade-badge pp-grade-badge--${gradeColour(g.score)}`}>
+                    <div className="portal-grade-row__right">
+                      <span className="portal-grade-row__score">{g.score}</span>
+                      <span className={`portal-grade-badge portal-grade-badge--${gradeColour(g.score)}`}>
                         {g.grade}
                       </span>
                     </div>
@@ -307,12 +307,12 @@ function ParentDashboard({ user, onLogout }) {
           </div>
 
           {/* Right column */}
-          <div className="pp-col">
+          <div className="portal-col">
             {/* Fees */}
-            <div className="pp-card pp-card--fee">
+            <div className="portal-card pp-card--fee">
               <div className="pp-fee-header">
                 <div>
-                  <h3 className="pp-card__title">School fees</h3>
+                  <h3 className="portal-card__title">School fees</h3>
                   <p className="pp-fee-due">Due by {d.fees.nextDue}</p>
                 </div>
                 <button className="pp-fee-cta" type="button">Pay now</button>
@@ -326,8 +326,8 @@ function ParentDashboard({ user, onLogout }) {
             </div>
 
             {/* Upcoming events */}
-            <div className="pp-card">
-              <h3 className="pp-card__title">Upcoming events</h3>
+            <div className="portal-card">
+              <h3 className="portal-card__title">Upcoming events</h3>
               <div className="pp-events">
                 {d.events.map(ev => (
                   <div key={ev.title} className="pp-event-row">
@@ -342,17 +342,17 @@ function ParentDashboard({ user, onLogout }) {
             </div>
 
             {/* Notices */}
-            <div className="pp-card">
-              <h3 className="pp-card__title">School notices</h3>
-              <div className="pp-notices">
+            <div className="portal-card">
+              <h3 className="portal-card__title">School notices</h3>
+              <div className="portal-notices">
                 {d.notices.map(n => (
-                  <div key={n.id} className={`pp-notice${n.priority ? ' pp-notice--priority' : ''}`}>
+                  <div key={n.id} className={`portal-notice${n.priority ? ' portal-notice--priority' : ''}`}>
                     {n.priority && (
-                      <Icon name="alert-circle" size={12} className="pp-notice__icon" />
+                      <Icon name="alert-circle" size={12} className="portal-notice__icon" />
                     )}
-                    <div className="pp-notice__body">
-                      <p className="pp-notice__title">{n.title}</p>
-                      <span className="pp-notice__time">{n.time}</span>
+                    <div className="portal-notice__body">
+                      <p className="portal-notice__title">{n.title}</p>
+                      <span className="portal-notice__time">{n.time}</span>
                     </div>
                   </div>
                 ))}
@@ -362,7 +362,7 @@ function ParentDashboard({ user, onLogout }) {
         </div>
       </main>
 
-      <footer className="pp-dash-footer">
+      <footer className="portal-dash-footer">
         <p>SMK Bandar Utama &nbsp;·&nbsp;
           <a href="mailto:smkbu@moe.edu.my">smkbu@moe.edu.my</a>
           &nbsp;·&nbsp; 03-7722 1234

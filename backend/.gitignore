@@ -1,0 +1,17 @@
+target/
+*.class
+*.jar
+*.war
+*.ear
+
+# Local config with DB creds / JWT secret
+src/main/resources/application-local.properties
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.DS_Store
+
+# Maven
+.mvn/timing.properties
