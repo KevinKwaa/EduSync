@@ -74,6 +74,13 @@
 		</dependency>
 
 		<!-- DB migrations -->
+		<!-- Spring Boot 4 split auto-config into per-tech modules; this one wires
+		     Flyway into the startup lifecycle (runs migrations before JPA validate).
+		     Without it, flyway-core is on the classpath but never executes. -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-flyway</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.flywaydb</groupId>
 			<artifactId>flyway-core</artifactId>

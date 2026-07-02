@@ -1,85 +1,96 @@
-const delay = (ms) => new Promise((res) => setTimeout(res, ms));
+import { api } from './client';
 
+// Greeting + term context (backend personalises the greeting to the signed-in user).
 export async function getDashboardSummary() {
-  await delay(40);
+  const { data } = await api.get('/dashboard/summary');
   return {
-    greeting: 'Good morning, Faridah',
-    term: 'Term 2 · Week 9 · Tuesday, 18 June 2026',
+    greeting: data.greeting,
+    term: data.termContext,
     dateRangeLabel: 'This term',
   };
 }
 
+// Four KPI cards. Live numbers come from the API; the presentation scaffolding
+// (icons, labels, count-up format functions) stays here on the client.
 export async function getKPIs() {
-  await delay(50);
+  const [kpiRes, feeRes] = await Promise.all([
+    api.get('/dashboard/kpis'),
+    api.get('/fees/summary'),
+  ]);
+  const k = kpiRes.data;
+  const fees = feeRes.data;
+  const collected = Number(fees.collected) || 0;
+
+  const formatRM = (v) =>
+    v >= 1_000_000 ? `RM ${(v / 1_000_000).toFixed(2)}M`
+      : v >= 1_000 ? `RM ${(v / 1_000).toFixed(0)}K`
+        : `RM ${Math.round(v)}`;
+
   return [
     {
       id: 'students',
       label: 'Total students',
       icon: 'users',
-      rawValue: 4820,
+      rawValue: k.totalStudents,
       format: (v) => Math.round(v).toLocaleString('en-MY'),
-      delta: '+3.2% vs last term',
-      deltaType: 'success',
-      deltaIcon: 'trending-up',
+      delta: `${k.atRiskStudents} flagged at-risk`,
+      deltaType: k.atRiskStudents > 0 ? 'muted' : 'success',
     },
     {
       id: 'attendance',
       label: 'Attendance today',
       icon: 'calendar-check',
-      rawValue: 94.6,
+      rawValue: k.todayAttendancePct,
       format: (v) => `${v.toFixed(1)}%`,
-      delta: '+1.1% vs avg',
-      deltaType: 'success',
+      delta: 'present today',
+      deltaType: 'muted',
     },
     {
       id: 'fees',
       label: 'Fees collected',
       icon: 'wallet',
-      rawValue: 1.42,
-      format: (v) => `RM ${v.toFixed(2)}M`,
-      delta: '78% of term target',
+      rawValue: collected,
+      format: formatRM,
+      delta: `${fees.pct}% of term target`,
       deltaType: 'muted',
     },
     {
       id: 'staff',
       label: 'Teaching staff',
       icon: 'graduation-cap',
-      rawValue: 312,
+      rawValue: k.teachingStaff,
       format: (v) => String(Math.round(v)),
-      delta: '+6 this term',
+      delta: 'active',
       deltaType: 'success',
-      deltaIcon: 'trending-up',
     },
   ];
 }
 
+// Mon–Fri attendance rates; highlight the weakest day for the bar chart.
 export async function getAttendanceData() {
-  await delay(60);
-  return [
-    { day: 'Mon', rate: 95, heightPct: 90, highlight: false },
-    { day: 'Tue', rate: 93, heightPct: 86, highlight: false },
-    { day: 'Wed', rate: 96, heightPct: 94, highlight: false },
-    { day: 'Thu', rate: 92, heightPct: 84, highlight: false },
-    { day: 'Fri', rate: 86, heightPct: 72, highlight: true  },
-  ];
+  const { data } = await api.get('/attendance/weekly'); // [{ day, date, rate }]
+  const rates = data.map((d) => d.rate);
+  const min = rates.length ? Math.min(...rates) : 0;
+  return data.map((d) => ({
+    day: d.day,
+    rate: Math.round(d.rate),
+    heightPct: Math.round(d.rate),
+    highlight: d.rate === min,
+  }));
 }
 
+// Fee donut: collected % + pre-formatted RM labels.
 export async function getFeeCollection() {
-  await delay(60);
+  const { data } = await api.get('/dashboard/fees/collection');
   return {
-    collectedPct:    78,
-    collectedLabel:  'RM 1.42M',
-    outstandingLabel: 'RM 402K',
+    collectedPct: data.collectedPct,
+    collectedLabel: data.collectedLabel,
+    outstandingLabel: data.outstandingLabel,
   };
 }
 
+// Average score per subject; backend already flags the weakest subject.
 export async function getSubjectPerformance() {
-  await delay(60);
-  return [
-    { subject: 'Bahasa Melayu', score: 82, highlight: false },
-    { subject: 'Mathematics',   score: 76, highlight: false },
-    { subject: 'Science',       score: 79, highlight: false },
-    { subject: 'Sejarah',       score: 71, highlight: true  },
-    { subject: 'English',       score: 80, highlight: false },
-  ];
+  const { data } = await api.get('/dashboard/subjects/performance');
+  return data; // [{ subject, score, highlight }]
 }

@@ -258,7 +258,7 @@ curl http://localhost:8080/api/v1/dashboard/kpis \
 ## 11. EduSync Package Structure
 
 ```
-com.example.demo/
+com./
   DemoApplication.java         ← entry point, @SpringBootApplication
   entity/                      ← JPA entities + enums (DB table classes)
   repository/                  ← JpaRepository interfaces (DB queries)

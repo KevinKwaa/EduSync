@@ -1,0 +1,552 @@
+{
+  "backend/mvnw": {
+    "mtime": 1782665299.1936224,
+    "ast_hash": "a2a96102e44344e62ceb287667ebf497",
+    "semantic_hash": "a2a96102e44344e62ceb287667ebf497"
+  },
+  "backend/pom.xml": {
+    "mtime": 1782665299.194623,
+    "ast_hash": "c5b0979417329df8aaeb20833de572c7",
+    "semantic_hash": "c5b0979417329df8aaeb20833de572c7"
+  },
+  "backend/src/main/java/com/example/demo/DemoApplication.java": {
+    "mtime": 1782665299.1956227,
+    "ast_hash": "21875408b3481de91335db5fccb3ecfb",
+    "semantic_hash": "21875408b3481de91335db5fccb3ecfb"
+  },
+  "backend/src/main/java/com/example/demo/config/JwtProperties.java": {
+    "mtime": 1782665299.1956227,
+    "ast_hash": "56a362fd70fe8787983572d187234574",
+    "semantic_hash": "56a362fd70fe8787983572d187234574"
+  },
+  "backend/src/main/java/com/example/demo/config/SecurityConfig.java": {
+    "mtime": 1782665299.1956227,
+    "ast_hash": "41074efa1bcc72ddbfd0a06b5852fd78",
+    "semantic_hash": "41074efa1bcc72ddbfd0a06b5852fd78"
+  },
+  "backend/src/main/java/com/example/demo/controller/AuthController.java": {
+    "mtime": 1782665299.1956227,
+    "ast_hash": "a00754931430fdc632f7ef40be04c15b",
+    "semantic_hash": "a00754931430fdc632f7ef40be04c15b"
+  },
+  "backend/src/main/java/com/example/demo/controller/DashboardController.java": {
+    "mtime": 1782665299.1956227,
+    "ast_hash": "b68dcead5dec4ebab927d9c5bf125dba",
+    "semantic_hash": "b68dcead5dec4ebab927d9c5bf125dba"
+  },
+  "backend/src/main/java/com/example/demo/dto/AttendanceWeekDto.java": {
+    "mtime": 1782665299.1966228,
+    "ast_hash": "0b762bb86adf917e0a53ab3d4121e4f0",
+    "semantic_hash": "0b762bb86adf917e0a53ab3d4121e4f0"
+  },
+  "backend/src/main/java/com/example/demo/dto/DashboardSummaryDto.java": {
+    "mtime": 1782665299.1966228,
+    "ast_hash": "153de7ccad7e3e54fd423d8dbc3505b0",
+    "semantic_hash": "153de7ccad7e3e54fd423d8dbc3505b0"
+  },
+  "backend/src/main/java/com/example/demo/dto/ErrorResponse.java": {
+    "mtime": 1782665299.1966228,
+    "ast_hash": "ed613e506488231c23f960074d8c5a1e",
+    "semantic_hash": "ed613e506488231c23f960074d8c5a1e"
+  },
+  "backend/src/main/java/com/example/demo/dto/KpiDto.java": {
+    "mtime": 1782665299.1966228,
+    "ast_hash": "fe59785c1d72aed1e97c81e8ea6b4d75",
+    "semantic_hash": "fe59785c1d72aed1e97c81e8ea6b4d75"
+  },
+  "backend/src/main/java/com/example/demo/dto/LoginRequest.java": {
+    "mtime": 1782665299.1966228,
+    "ast_hash": "24c9086cde50da75812610e41b427e11",
+    "semantic_hash": "24c9086cde50da75812610e41b427e11"
+  },
+  "backend/src/main/java/com/example/demo/dto/LoginResponse.java": {
+    "mtime": 1782665299.1966228,
+    "ast_hash": "2e5395ba1ab8dd03285c0754778b1f06",
+    "semantic_hash": "2e5395ba1ab8dd03285c0754778b1f06"
+  },
+  "backend/src/main/java/com/example/demo/entity/AttendanceRecord.java": {
+    "mtime": 1782665299.1966228,
+    "ast_hash": "6f106c533c4465b144d75f886c0dcd5c",
+    "semantic_hash": "6f106c533c4465b144d75f886c0dcd5c"
+  },
+  "backend/src/main/java/com/example/demo/entity/AttendanceStatus.java": {
+    "mtime": 1782665299.197624,
+    "ast_hash": "0b4aa2f5ccd4f75cf156c05f4b0fdd67",
+    "semantic_hash": "0b4aa2f5ccd4f75cf156c05f4b0fdd67"
+  },
+  "backend/src/main/java/com/example/demo/entity/Bursary.java": {
+    "mtime": 1782665299.197624,
+    "ast_hash": "ab8e5dde40300c4b58ea4e7e7dcd497f",
+    "semantic_hash": "ab8e5dde40300c4b58ea4e7e7dcd497f"
+  },
+  "backend/src/main/java/com/example/demo/entity/BursaryStatus.java": {
+    "mtime": 1782665299.197624,
+    "ast_hash": "d5b03b0eed3c9a009273ded573aad853",
+    "semantic_hash": "d5b03b0eed3c9a009273ded573aad853"
+  },
+  "backend/src/main/java/com/example/demo/entity/Campus.java": {
+    "mtime": 1782665299.197624,
+    "ast_hash": "018c4a0de298f2b6ce91d295aba39498",
+    "semantic_hash": "018c4a0de298f2b6ce91d295aba39498"
+  },
+  "backend/src/main/java/com/example/demo/entity/ClassRoom.java": {
+    "mtime": 1782665299.197624,
+    "ast_hash": "1d0c67f43a8e3833644a5b7fdd736ed5",
+    "semantic_hash": "1d0c67f43a8e3833644a5b7fdd736ed5"
+  },
+  "backend/src/main/java/com/example/demo/entity/Event.java": {
+    "mtime": 1782665299.197624,
+    "ast_hash": "69f68e064e3c1783de91692b57dc87be",
+    "semantic_hash": "69f68e064e3c1783de91692b57dc87be"
+  },
+  "backend/src/main/java/com/example/demo/entity/ExamResult.java": {
+    "mtime": 1782665299.197624,
+    "ast_hash": "395ad19bb121c7b8cd4bcaf5ad5f6e35",
+    "semantic_hash": "395ad19bb121c7b8cd4bcaf5ad5f6e35"
+  },
+  "backend/src/main/java/com/example/demo/entity/ExamType.java": {
+    "mtime": 1782665299.197624,
+    "ast_hash": "534d163595b8779f57f4e9efb09fb719",
+    "semantic_hash": "534d163595b8779f57f4e9efb09fb719"
+  },
+  "backend/src/main/java/com/example/demo/entity/FeeRecord.java": {
+    "mtime": 1782665299.1986258,
+    "ast_hash": "8f2fc2942a11a8f138dea0289f21fc63",
+    "semantic_hash": "8f2fc2942a11a8f138dea0289f21fc63"
+  },
+  "backend/src/main/java/com/example/demo/entity/FeeStatus.java": {
+    "mtime": 1782665299.1986258,
+    "ast_hash": "23a7b31460587f94050b904701e78576",
+    "semantic_hash": "23a7b31460587f94050b904701e78576"
+  },
+  "backend/src/main/java/com/example/demo/entity/LeaveRequest.java": {
+    "mtime": 1782665299.1986258,
+    "ast_hash": "0c1124c7b305d2c53bad640435cbfe00",
+    "semantic_hash": "0c1124c7b305d2c53bad640435cbfe00"
+  },
+  "backend/src/main/java/com/example/demo/entity/LeaveStatus.java": {
+    "mtime": 1782665299.1986258,
+    "ast_hash": "56d0f9239f6ba66cda82d4efff3d1d51",
+    "semantic_hash": "56d0f9239f6ba66cda82d4efff3d1d51"
+  },
+  "backend/src/main/java/com/example/demo/entity/Notice.java": {
+    "mtime": 1782665299.1986258,
+    "ast_hash": "7c3eca13e3edfdb3ebe2da5d6bf21c5c",
+    "semantic_hash": "7c3eca13e3edfdb3ebe2da5d6bf21c5c"
+  },
+  "backend/src/main/java/com/example/demo/entity/NoticeStatus.java": {
+    "mtime": 1782665299.1986258,
+    "ast_hash": "8d0e8e6c7ec997e4ca76de7ed4776b92",
+    "semantic_hash": "8d0e8e6c7ec997e4ca76de7ed4776b92"
+  },
+  "backend/src/main/java/com/example/demo/entity/Role.java": {
+    "mtime": 1782665299.1986258,
+    "ast_hash": "cefca2b3e12afce8624233ea6b493f73",
+    "semantic_hash": "cefca2b3e12afce8624233ea6b493f73"
+  },
+  "backend/src/main/java/com/example/demo/entity/Staff.java": {
+    "mtime": 1782665299.1986258,
+    "ast_hash": "d776a9e0407cb3037142a2c7f1637c5a",
+    "semantic_hash": "d776a9e0407cb3037142a2c7f1637c5a"
+  },
+  "backend/src/main/java/com/example/demo/entity/Student.java": {
+    "mtime": 1782665299.1986258,
+    "ast_hash": "fcf099a55a1bdc0d378f929eb506b7d1",
+    "semantic_hash": "fcf099a55a1bdc0d378f929eb506b7d1"
+  },
+  "backend/src/main/java/com/example/demo/entity/StudentStatus.java": {
+    "mtime": 1782665299.1996226,
+    "ast_hash": "f1193c844b0996e8a6c09c94bbe0e2f2",
+    "semantic_hash": "f1193c844b0996e8a6c09c94bbe0e2f2"
+  },
+  "backend/src/main/java/com/example/demo/entity/Subject.java": {
+    "mtime": 1782665299.1996226,
+    "ast_hash": "45709d9a30388cb6acb249c1fee24faa",
+    "semantic_hash": "45709d9a30388cb6acb249c1fee24faa"
+  },
+  "backend/src/main/java/com/example/demo/entity/User.java": {
+    "mtime": 1782665299.1996226,
+    "ast_hash": "6081f07406bf6b0d36ca77b3cfb4d84c",
+    "semantic_hash": "6081f07406bf6b0d36ca77b3cfb4d84c"
+  },
+  "backend/src/main/java/com/example/demo/exception/GlobalExceptionHandler.java": {
+    "mtime": 1782665299.1996226,
+    "ast_hash": "655b75a0a1e34775272be794234198f5",
+    "semantic_hash": "655b75a0a1e34775272be794234198f5"
+  },
+  "backend/src/main/java/com/example/demo/repository/AttendanceRecordRepository.java": {
+    "mtime": 1782665299.1996226,
+    "ast_hash": "8b9fd16b353f59e156dac8eb5d21e5b8",
+    "semantic_hash": "8b9fd16b353f59e156dac8eb5d21e5b8"
+  },
+  "backend/src/main/java/com/example/demo/repository/BursaryRepository.java": {
+    "mtime": 1782665299.1996226,
+    "ast_hash": "7db5990caedee3844f593c2da35d07d8",
+    "semantic_hash": "7db5990caedee3844f593c2da35d07d8"
+  },
+  "backend/src/main/java/com/example/demo/repository/CampusRepository.java": {
+    "mtime": 1782665299.2006226,
+    "ast_hash": "a98b3362d2b9e20330a6cb604dc64f4f",
+    "semantic_hash": "a98b3362d2b9e20330a6cb604dc64f4f"
+  },
+  "backend/src/main/java/com/example/demo/repository/ClassRoomRepository.java": {
+    "mtime": 1782665299.2006226,
+    "ast_hash": "d21d8939a6f354429167c7c4ec6ec33a",
+    "semantic_hash": "d21d8939a6f354429167c7c4ec6ec33a"
+  },
+  "backend/src/main/java/com/example/demo/repository/EventRepository.java": {
+    "mtime": 1782665299.2006226,
+    "ast_hash": "c460e5b06dc8b1c3f30d9edad9a20a51",
+    "semantic_hash": "c460e5b06dc8b1c3f30d9edad9a20a51"
+  },
+  "backend/src/main/java/com/example/demo/repository/ExamResultRepository.java": {
+    "mtime": 1782665299.2006226,
+    "ast_hash": "d0fcdc56d097664a45e55191218d3253",
+    "semantic_hash": "d0fcdc56d097664a45e55191218d3253"
+  },
+  "backend/src/main/java/com/example/demo/repository/FeeRecordRepository.java": {
+    "mtime": 1782665299.2006226,
+    "ast_hash": "9659b40b70a184387143fd3c52a8a1cc",
+    "semantic_hash": "9659b40b70a184387143fd3c52a8a1cc"
+  },
+  "backend/src/main/java/com/example/demo/repository/LeaveRequestRepository.java": {
+    "mtime": 1782665299.2006226,
+    "ast_hash": "9bedcb782a9f24a612b88bfe974fcc44",
+    "semantic_hash": "9bedcb782a9f24a612b88bfe974fcc44"
+  },
+  "backend/src/main/java/com/example/demo/repository/NoticeRepository.java": {
+    "mtime": 1782665299.2006226,
+    "ast_hash": "d75abe8fbf064c8b58f53e91497cdc56",
+    "semantic_hash": "d75abe8fbf064c8b58f53e91497cdc56"
+  },
+  "backend/src/main/java/com/example/demo/repository/StaffRepository.java": {
+    "mtime": 1782665299.2016222,
+    "ast_hash": "3f34b65dab8c3f5a950317d83181427e",
+    "semantic_hash": "3f34b65dab8c3f5a950317d83181427e"
+  },
+  "backend/src/main/java/com/example/demo/repository/StudentRepository.java": {
+    "mtime": 1782665299.2016222,
+    "ast_hash": "87b03acd591b037f25cb1baa471603f6",
+    "semantic_hash": "87b03acd591b037f25cb1baa471603f6"
+  },
+  "backend/src/main/java/com/example/demo/repository/SubjectRepository.java": {
+    "mtime": 1782665299.2016222,
+    "ast_hash": "7f3827df896be61aaec5961bf53c1956",
+    "semantic_hash": "7f3827df896be61aaec5961bf53c1956"
+  },
+  "backend/src/main/java/com/example/demo/repository/UserRepository.java": {
+    "mtime": 1782665299.2016222,
+    "ast_hash": "cd7cefd7b0f5bd8fc15f4314b751a415",
+    "semantic_hash": "cd7cefd7b0f5bd8fc15f4314b751a415"
+  },
+  "backend/src/main/java/com/example/demo/security/JwtAuthFilter.java": {
+    "mtime": 1782665299.2016222,
+    "ast_hash": "c3e003ca3737c877c2f2bc91b3921943",
+    "semantic_hash": "c3e003ca3737c877c2f2bc91b3921943"
+  },
+  "backend/src/main/java/com/example/demo/security/JwtUtil.java": {
+    "mtime": 1782665299.2016222,
+    "ast_hash": "cbf2755808451fa68f880d3c6b5b33ec",
+    "semantic_hash": "cbf2755808451fa68f880d3c6b5b33ec"
+  },
+  "backend/src/main/java/com/example/demo/security/UserDetailsServiceImpl.java": {
+    "mtime": 1782665299.2016222,
+    "ast_hash": "6ccc7598fb99955727af85ab884e73ab",
+    "semantic_hash": "6ccc7598fb99955727af85ab884e73ab"
+  },
+  "backend/src/main/java/com/example/demo/service/AuthService.java": {
+    "mtime": 1782665299.2026231,
+    "ast_hash": "a903605ac670a3b038eecf1c2c6dd6f6",
+    "semantic_hash": "a903605ac670a3b038eecf1c2c6dd6f6"
+  },
+  "backend/src/main/java/com/example/demo/service/DashboardService.java": {
+    "mtime": 1782665299.2026231,
+    "ast_hash": "fb3981bb527676f1524c1e26814c7f50",
+    "semantic_hash": "fb3981bb527676f1524c1e26814c7f50"
+  },
+  "backend/src/main/resources/db/migration/V1__init.sql": {
+    "mtime": 1782665299.2026231,
+    "ast_hash": "b799a39b2ca2209c4024020de48b71a7",
+    "semantic_hash": "b799a39b2ca2209c4024020de48b71a7"
+  },
+  "backend/src/test/java/com/example/demo/DemoApplicationTests.java": {
+    "mtime": 1782665299.2046237,
+    "ast_hash": "d5d763e3cc5a0d5a74388e6d2d51c1f9",
+    "semantic_hash": "d5d763e3cc5a0d5a74388e6d2d51c1f9"
+  },
+  "frontend/myapp/eslint.config.js": {
+    "mtime": 1782665299.2096229,
+    "ast_hash": "fa91453358b56681481f75f81d1bfccd",
+    "semantic_hash": "fa91453358b56681481f75f81d1bfccd"
+  },
+  "frontend/myapp/package.json": {
+    "mtime": 1782665299.210623,
+    "ast_hash": "96e28b4d5c6d5b40cc7406e5d8048486",
+    "semantic_hash": "96e28b4d5c6d5b40cc7406e5d8048486"
+  },
+  "frontend/myapp/src/App.jsx": {
+    "mtime": 1782665299.2116227,
+    "ast_hash": "7bd2501e3eb8e5e65b54585aa39f40d3",
+    "semantic_hash": "7bd2501e3eb8e5e65b54585aa39f40d3"
+  },
+  "frontend/myapp/src/api/authService.js": {
+    "mtime": 1782665299.2116227,
+    "ast_hash": "e8314bd9c5d9e50b5956973eb49ef714",
+    "semantic_hash": "e8314bd9c5d9e50b5956973eb49ef714"
+  },
+  "frontend/myapp/src/api/dashboardService.js": {
+    "mtime": 1782665299.2116227,
+    "ast_hash": "c2c6e665c6375357494f1af2f4f91579",
+    "semantic_hash": "c2c6e665c6375357494f1af2f4f91579"
+  },
+  "frontend/myapp/src/api/eventsService.js": {
+    "mtime": 1782665299.2116227,
+    "ast_hash": "c62d949c7e7e1f1c70ce5f654a620beb",
+    "semantic_hash": "c62d949c7e7e1f1c70ce5f654a620beb"
+  },
+  "frontend/myapp/src/api/noticesService.js": {
+    "mtime": 1782665299.2126226,
+    "ast_hash": "b3dc47b51f6173b20efa490ec2504e06",
+    "semantic_hash": "b3dc47b51f6173b20efa490ec2504e06"
+  },
+  "frontend/myapp/src/api/sectionsService.js": {
+    "mtime": 1782665299.2126226,
+    "ast_hash": "557c11827b083db6f7fedaa0682a2072",
+    "semantic_hash": "557c11827b083db6f7fedaa0682a2072"
+  },
+  "frontend/myapp/src/api/studentsService.js": {
+    "mtime": 1782665299.2126226,
+    "ast_hash": "90e7eddc1016b05c094555de5b3b0549",
+    "semantic_hash": "90e7eddc1016b05c094555de5b3b0549"
+  },
+  "frontend/myapp/src/components/dashboard/AdminDashboard.jsx": {
+    "mtime": 1782665299.2136226,
+    "ast_hash": "43b3f512e28ab4cf12e6029d4f7ae17f",
+    "semantic_hash": "43b3f512e28ab4cf12e6029d4f7ae17f"
+  },
+  "frontend/myapp/src/components/dashboard/AtRiskStudents.jsx": {
+    "mtime": 1782665299.214623,
+    "ast_hash": "18711e59cad549362603b11ea70c9020",
+    "semantic_hash": "18711e59cad549362603b11ea70c9020"
+  },
+  "frontend/myapp/src/components/dashboard/AttendanceChart.jsx": {
+    "mtime": 1782665299.214623,
+    "ast_hash": "8a91ca508b93f0f9d3f9195479b72ce2",
+    "semantic_hash": "8a91ca508b93f0f9d3f9195479b72ce2"
+  },
+  "frontend/myapp/src/components/dashboard/FeeDonut.jsx": {
+    "mtime": 1782665299.214623,
+    "ast_hash": "280f0763d7110abc1517db7002937caf",
+    "semantic_hash": "280f0763d7110abc1517db7002937caf"
+  },
+  "frontend/myapp/src/components/dashboard/GreetingRow.jsx": {
+    "mtime": 1782665299.214623,
+    "ast_hash": "e684113b0845d9a2723ac850566e1202",
+    "semantic_hash": "e684113b0845d9a2723ac850566e1202"
+  },
+  "frontend/myapp/src/components/dashboard/KPIRow.jsx": {
+    "mtime": 1782665299.2156227,
+    "ast_hash": "5d763918a40440e0464c67b054172273",
+    "semantic_hash": "5d763918a40440e0464c67b054172273"
+  },
+  "frontend/myapp/src/components/dashboard/NoticeBoard.jsx": {
+    "mtime": 1782665299.2156227,
+    "ast_hash": "a51ef91e4faa254b6c95feca2b3611b0",
+    "semantic_hash": "a51ef91e4faa254b6c95feca2b3611b0"
+  },
+  "frontend/myapp/src/components/dashboard/SectionViews.jsx": {
+    "mtime": 1782665299.2156227,
+    "ast_hash": "3bb6b16e0795c04c8c214741c7d947a8",
+    "semantic_hash": "3bb6b16e0795c04c8c214741c7d947a8"
+  },
+  "frontend/myapp/src/components/dashboard/SubjectPerformance.jsx": {
+    "mtime": 1782665299.2166228,
+    "ast_hash": "97d2b90cd26ff785fe1bf505fec56103",
+    "semantic_hash": "97d2b90cd26ff785fe1bf505fec56103"
+  },
+  "frontend/myapp/src/components/dashboard/UpcomingEvents.jsx": {
+    "mtime": 1782665299.2166228,
+    "ast_hash": "8c6ab7e8035be13f81f659969d8e01e3",
+    "semantic_hash": "8c6ab7e8035be13f81f659969d8e01e3"
+  },
+  "frontend/myapp/src/components/layout/ContentArea.jsx": {
+    "mtime": 1782665299.2166228,
+    "ast_hash": "97387711012b4549326a8f9dc603f04a",
+    "semantic_hash": "97387711012b4549326a8f9dc603f04a"
+  },
+  "frontend/myapp/src/components/layout/IconRail.jsx": {
+    "mtime": 1782665299.2176228,
+    "ast_hash": "5d8b14f85809ddd41cb6ba5ebb96e58a",
+    "semantic_hash": "5d8b14f85809ddd41cb6ba5ebb96e58a"
+  },
+  "frontend/myapp/src/components/layout/Sidebar.jsx": {
+    "mtime": 1782665299.2176228,
+    "ast_hash": "c1112b72f2bb0ef28ce7e4fe3173aefe",
+    "semantic_hash": "c1112b72f2bb0ef28ce7e4fe3173aefe"
+  },
+  "frontend/myapp/src/components/layout/TopNav.jsx": {
+    "mtime": 1782665299.2176228,
+    "ast_hash": "5cdbcf3bd0b782d080d3ac3a19f869d5",
+    "semantic_hash": "5cdbcf3bd0b782d080d3ac3a19f869d5"
+  },
+  "frontend/myapp/src/components/ui/Card.jsx": {
+    "mtime": 1782665299.2176228,
+    "ast_hash": "19bde0022c452258745c5bf9d07cad23",
+    "semantic_hash": "19bde0022c452258745c5bf9d07cad23"
+  },
+  "frontend/myapp/src/components/ui/Icon.jsx": {
+    "mtime": 1782665299.2186227,
+    "ast_hash": "e61bd6a9d31d1ca971284e7509e8a963",
+    "semantic_hash": "e61bd6a9d31d1ca971284e7509e8a963"
+  },
+  "frontend/myapp/src/components/ui/InitialsAvatar.jsx": {
+    "mtime": 1782665299.2186227,
+    "ast_hash": "94c29e7abfff75d3820c1d06cef47e7d",
+    "semantic_hash": "94c29e7abfff75d3820c1d06cef47e7d"
+  },
+  "frontend/myapp/src/components/ui/Pill.jsx": {
+    "mtime": 1782665299.2186227,
+    "ast_hash": "039093a8beca2a1f577425371e46f165",
+    "semantic_hash": "039093a8beca2a1f577425371e46f165"
+  },
+  "frontend/myapp/src/components/ui/Skeleton.jsx": {
+    "mtime": 1782665299.2196229,
+    "ast_hash": "2f42eb1bda52cb48afb7d1c9f8b9551f",
+    "semantic_hash": "2f42eb1bda52cb48afb7d1c9f8b9551f"
+  },
+  "frontend/myapp/src/constants/nav.js": {
+    "mtime": 1782665299.2196229,
+    "ast_hash": "9e2df718940fcefb2b908a975543c3bc",
+    "semantic_hash": "9e2df718940fcefb2b908a975543c3bc"
+  },
+  "frontend/myapp/src/context/AuthContext.jsx": {
+    "mtime": 1782665299.2196229,
+    "ast_hash": "205888aea5128fc2067cfd49593dd70c",
+    "semantic_hash": "205888aea5128fc2067cfd49593dd70c"
+  },
+  "frontend/myapp/src/hooks/useAnimateData.js": {
+    "mtime": 1782665299.2196229,
+    "ast_hash": "1499168696534a3872526126b3f7e3c2",
+    "semantic_hash": "1499168696534a3872526126b3f7e3c2"
+  },
+  "frontend/myapp/src/hooks/useCountUp.js": {
+    "mtime": 1782665299.2196229,
+    "ast_hash": "032daf901b514f12fad3dd4d424b9fe1",
+    "semantic_hash": "032daf901b514f12fad3dd4d424b9fe1"
+  },
+  "frontend/myapp/src/hooks/useTheme.js": {
+    "mtime": 1782665299.220623,
+    "ast_hash": "b8717c7e1c29e799a162ad704a66d68d",
+    "semantic_hash": "b8717c7e1c29e799a162ad704a66d68d"
+  },
+  "frontend/myapp/src/main.jsx": {
+    "mtime": 1782665299.220623,
+    "ast_hash": "04effde3e8a0c610a98cab0be384c694",
+    "semantic_hash": "04effde3e8a0c610a98cab0be384c694"
+  },
+  "frontend/myapp/src/pages/AddStudentPage.jsx": {
+    "mtime": 1782665299.220623,
+    "ast_hash": "e5223fbe394093e4ea205d8911dd491c",
+    "semantic_hash": "e5223fbe394093e4ea205d8911dd491c"
+  },
+  "frontend/myapp/src/pages/LoginPage.jsx": {
+    "mtime": 1782665299.221623,
+    "ast_hash": "945be6ec1b9b4a39101668d6050e2db1",
+    "semantic_hash": "945be6ec1b9b4a39101668d6050e2db1"
+  },
+  "frontend/myapp/src/pages/ParentPortalPage.jsx": {
+    "mtime": 1782665299.221623,
+    "ast_hash": "a3d5bb1adab3b0c04c5ab3fe094efd57",
+    "semantic_hash": "a3d5bb1adab3b0c04c5ab3fe094efd57"
+  },
+  "frontend/myapp/src/pages/StudentPortalPage.jsx": {
+    "mtime": 1782665299.221623,
+    "ast_hash": "43d6886fca7267797aebb80bc80bd3d5",
+    "semantic_hash": "43d6886fca7267797aebb80bc80bd3d5"
+  },
+  "frontend/myapp/vite.config.js": {
+    "mtime": 1782665299.2236226,
+    "ast_hash": "199e1221ae03d6974fdc8b5e23787b98",
+    "semantic_hash": "199e1221ae03d6974fdc8b5e23787b98"
+  },
+  ".claude/skills/codesync-design/SKILL.md": {
+    "mtime": 1782665299.1916244,
+    "ast_hash": "fbe4b684b52b41477ee0ba757eff8af6",
+    "semantic_hash": "fbe4b684b52b41477ee0ba757eff8af6"
+  },
+  ".impeccable/critique/2026-06-21T13-29-34Z__admindashboard-http-localhost-5174.md": {
+    "mtime": 1782665299.192623,
+    "ast_hash": "85c4fb2fb50c095fc24e302805660820",
+    "semantic_hash": "85c4fb2fb50c095fc24e302805660820"
+  },
+  "PRODUCT.md": {
+    "mtime": 1782665299.192623,
+    "ast_hash": "4a8acdbf83361d40b63d61dc514cd26a",
+    "semantic_hash": "4a8acdbf83361d40b63d61dc514cd26a"
+  },
+  "README.md": {
+    "mtime": 1782665299.192623,
+    "ast_hash": "adf1866518b18e803cadbc1069742d8e",
+    "semantic_hash": "adf1866518b18e803cadbc1069742d8e"
+  },
+  "SPRINGBOOT_GUIDE.md": {
+    "mtime": 1782665299.1936224,
+    "ast_hash": "8225aec4cec4c608bf21dd083266134e",
+    "semantic_hash": "8225aec4cec4c608bf21dd083266134e"
+  },
+  "backend/HELP.md": {
+    "mtime": 1782665299.1936224,
+    "ast_hash": "110ee6e265e74685204446493b4cc419",
+    "semantic_hash": "110ee6e265e74685204446493b4cc419"
+  },
+  "backend/PASSDOWN.md": {
+    "mtime": 1782665299.1936224,
+    "ast_hash": "f2f827d7ecb4eb08e0953b825ce4f33a",
+    "semantic_hash": "f2f827d7ecb4eb08e0953b825ce4f33a"
+  },
+  "design-reference/EduSync LMS Redesign - Standalone.html": {
+    "mtime": 1782665299.208622,
+    "ast_hash": "da5b8adebea611694e5fa141f65691a6",
+    "semantic_hash": "da5b8adebea611694e5fa141f65691a6"
+  },
+  "design-reference/README.md": {
+    "mtime": 1782665299.2096229,
+    "ast_hash": "bd76cfebbc828f83823931be14d5125c",
+    "semantic_hash": "bd76cfebbc828f83823931be14d5125c"
+  },
+  "frontend/myapp/README.md": {
+    "mtime": 1782665299.2096229,
+    "ast_hash": "abfa161e3e5434e3e85394bf03d387a4",
+    "semantic_hash": "abfa161e3e5434e3e85394bf03d387a4"
+  },
+  "frontend/myapp/index.html": {
+    "mtime": 1782665299.2096229,
+    "ast_hash": "6ac48af48d66967c8f1cdafb3887baa5",
+    "semantic_hash": "6ac48af48d66967c8f1cdafb3887baa5"
+  },
+  "frontend/myapp/public/favicon.svg": {
+    "mtime": 1782665299.210623,
+    "ast_hash": "7e840862161341271697daa99a40d76b",
+    "semantic_hash": "7e840862161341271697daa99a40d76b"
+  },
+  "frontend/myapp/public/icons.svg": {
+    "mtime": 1782665299.2116227,
+    "ast_hash": "21c7473c592c67dc87223d49892c8f0a",
+    "semantic_hash": "21c7473c592c67dc87223d49892c8f0a"
+  },
+  "frontend/myapp/src/assets/hero.png": {
+    "mtime": 1782665299.2126226,
+    "ast_hash": "aead493361b27e7510691c5d7072dfc1",
+    "semantic_hash": "aead493361b27e7510691c5d7072dfc1"
+  },
+  "frontend/myapp/src/assets/react.svg": {
+    "mtime": 1782665299.2126226,
+    "ast_hash": "f0402b67b6ce880f65666bb49e841696",
+    "semantic_hash": "f0402b67b6ce880f65666bb49e841696"
+  },
+  "frontend/myapp/src/assets/vite.svg": {
+    "mtime": 1782665299.2136226,
+    "ast_hash": "6d5180a782d64c8cf51ba01c2a2184d8",
+    "semantic_hash": "6d5180a782d64c8cf51ba01c2a2184d8"
+  }
+}
